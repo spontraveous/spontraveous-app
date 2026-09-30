@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root{font-family:"Space Grotesk",system-ui,sans-serif;color:#f5f3ee;background:#080808;font-synthesis:none}
+*{box-sizing:border-box} body{margin:0;min-width:320px;background:#080808} button,input,select{font:inherit}
+button{cursor:pointer} .nav{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,72px);border-bottom:1px solid #242424}
+.logo{font-weight:700;letter-spacing:-.04em;font-size:18px}.logo span{font-size:8px;vertical-align:top;margin-left:2px}
+.ghost{background:none;border:0;color:#777;font:500 10px "DM Mono";letter-spacing:.12em}.ghost:hover{color:#fff}
+.hero,.result-wrap{max-width:930px;margin:0 auto;padding:clamp(60px,10vh,110px) 24px 80px;text-align:center}
+.eyebrow{font:500 11px "DM Mono";letter-spacing:.22em;color:#777;margin-bottom:18px}
+h1{font-size:clamp(48px,8.4vw,104px);line-height:.84;letter-spacing:-.075em;margin:0;font-weight:700}
+h1 em{font-style:normal;color:#888}.lede{max-width:500px;margin:28px auto 42px;color:#aaa;font-size:17px;line-height:1.5}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:650px;margin:auto}
+label{display:flex;align-items:center;gap:15px;border:1px solid #303030;padding:15px 17px;text-align:left;background:#101010}
+label span{font:500 9px "DM Mono";letter-spacing:.16em;color:#666}input,select{background:none;border:0;outline:0;color:#fff;width:100%;font-weight:600}select{appearance:none}
+.chips{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:18px 0}.chip,.budget-btn{border:1px solid #303030;background:#101010;color:#888;padding:10px 14px;font:500 10px "DM Mono";letter-spacing:.08em}.chip.active,.budget-btn.active{background:#f5f3ee;color:#080808;border-color:#f5f3ee}
+.budget{display:flex;justify-content:center;gap:6px;margin:0 0 30px}.budget-btn{padding:7px 13px}
+.spin{width:190px;height:190px;border-radius:50%;border:1px solid #555;background:#f5f3ee;color:#080808;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;transition:transform .25s,box-shadow .25s}
+.spin:hover{transform:scale(1.04);box-shadow:0 0 0 8px #1c1c1c}.spin span{font-size:44px;font-weight:700;letter-spacing:-.08em}.spin small{font:500 9px "DM Mono";letter-spacing:.13em}.spinning{animation:pulse .65s infinite alternate}.fine,.disclaimer{font:10px "DM Mono";color:#555;letter-spacing:.05em;margin-top:25px}
+@keyframes pulse{to{transform:scale(.92) rotate(4deg)}}
+.result-wrap h1{font-size:clamp(48px,8vw,96px);margin-bottom:35px}.card{max-width:620px;margin:0 auto;border:1px solid #333;background:#111;text-align:left;padding:26px}.card-top{display:flex;justify-content:space-between;color:#777;font:500 10px "DM Mono";letter-spacing:.12em}.big-icon{font-size:68px;margin:42px 0 12px}.card h2{font-size:clamp(30px,5vw,48px);line-height:.95;letter-spacing:-.05em;margin:0 0 14px}.meta{color:#999;margin:0 0 30px;font:12px "DM Mono"}.card-actions{display:flex;gap:8px}.primary,.secondary{border:0;padding:15px 18px;font:700 11px "DM Mono";letter-spacing:.08em}.primary{background:#f5f3ee;color:#080808;flex:1}.secondary{background:#222;color:#ddd;flex:1}.share-row{max-width:620px;margin:14px auto 0;display:flex;justify-content:space-between;align-items:center}.share-row button{background:none;border:0;color:#fff;font:500 10px "DM Mono";letter-spacing:.1em;padding:12px 0}.share-row span{color:#555;font:10px "DM Mono"}
+@media(max-width:600px){.controls{grid-template-columns:1fr}.hero,.result-wrap{padding-top:55px}.nav{height:64px}.spin{width:170px;height:170px}.card{padding:20px}.card-actions{flex-direction:column}.share-row{padding:0 4px}}
