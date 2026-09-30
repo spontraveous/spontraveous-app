@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { experiences } from "./data/experiences";
+import Waitlist from "./components/Waitlist.jsx";
 
 const vibes = ["SURPRISE", "CHILL", "WEIRD", "ROMANTIC", "WILD"];
 
@@ -77,6 +78,7 @@ export default function App() {
             <small>{spinning ? "FINDING YOUR MOVE" : "SURPRISE ME"}</small>
           </button>
           <p className="fine">No itinerary. No overthinking. Just go.</p>
+          <Waitlist />
         </section>
       ) : (
         <section className="result-wrap">
