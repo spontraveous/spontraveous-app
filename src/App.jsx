@@ -22,12 +22,14 @@ export default function App() {
   const [result, setResult] = useState(null);
   const [spinning, setSpinning] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [showBookingWaitlist, setShowBookingWaitlist] = useState(false);
 
   const status = useMemo(() => result ? "result" : "home", [result]);
 
   function spin() {
     setSpinning(true);
     setCopied(false);
+    setShowBookingWaitlist(false);
     window.setTimeout(() => {
       setResult(pickExperience(vibe, budget, result));
       setSpinning(false);
@@ -51,7 +53,7 @@ export default function App() {
     <main className={status}>
       <nav className="nav">
         <div className="logo">SPONTRAVEOUS<span>®</span></div>
-        <button className="ghost" onClick={() => setResult(null)}>START OVER</button>
+        <button className="ghost" onClick={() => { setResult(null); setShowBookingWaitlist(false); }}>START OVER</button>
       </nav>
 
       {!result ? (
@@ -90,10 +92,20 @@ export default function App() {
             <h2>{result.title}</h2>
             <p className="meta">{result.place} · {result.time} · {result.duration}</p>
             <div className="card-actions">
-              <button className="primary" onClick={() => alert("Booking links will connect to live inventory next.")}>DO IT →</button>
+              <button className="primary" onClick={() => setShowBookingWaitlist(true)}>DO IT →</button>
               <button className="secondary" onClick={spin}>NOPE, SPIN AGAIN</button>
             </div>
           </article>
+
+          {showBookingWaitlist && (
+            <section className="booking-waitlist" aria-live="polite">
+              <div className="booking-kicker">THIS ONE'S A LITTLE AHEAD OF US.</div>
+              <h2>Want first dibs when you can actually book it?</h2>
+              <p>We're connecting Spontraveous to live availability now. Join the app list and we'll let you know when <strong>{result.title}</strong> is ready to book.</p>
+              <Waitlist />
+            </section>
+          )}
+
           <div className="share-row">
             <button onClick={share}>{copied ? "COPIED!" : "↗ SHARE THIS PLAN"}</button>
             <span>Would you do it?</span>
